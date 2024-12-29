@@ -46,6 +46,6 @@ func NewConnection(config *config.Config) (*gorm.DB, error) {
 		return nil, err
 	}
 
-	log.Println("Успешно подключились к базе данных PostgreSQL")
+	log.Println("\033[1;32mУспешно подключились к базе данных PostgreSQL\033[0m")
 	return db, err
 }

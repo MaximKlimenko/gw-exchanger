@@ -25,12 +25,12 @@ func main() {
 	grpcServer := grpc.NewServer()
 	pb.RegisterExchangeServiceServer(grpcServer, server)
 
-	listener, err := net.Listen("tcp", ":50051")
+	listener, err := net.Listen("tcp", ":"+cfg.GRPCPort)
 	if err != nil {
 		log.Fatalf("Не удалось запустить сервер: %v", err)
 	}
 
-	log.Println("gRPC сервер запущен на порту 50051")
+	log.Printf("\033[1;32mgRPC сервер запущен на порту %s\033[0m", cfg.GRPCPort)
 	if err := grpcServer.Serve(listener); err != nil {
 		log.Fatalf("Ошибка работы gRPC сервера: %v", err)
 	}
