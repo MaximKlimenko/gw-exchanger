@@ -16,6 +16,8 @@ gw-exchanger/
 │     ├── config/
 │     │    ├── config.go
 │     │    └── defaults.go
+│     └── exchanger/
+│          └── exchanger.go
 ├── go.mod
 ├── Dockerfile
 ├── config.env
